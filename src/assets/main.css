@@ -1,0 +1,32 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Sofia Sans', sans-serif;
+  color: rgb(255, 255, 255);
+}
+body{
+  background-color: #04060f;
+  display: flex;
+  flex-direction: column;
+}
+body::-webkit-scrollbar {
+  width: 10px;
+  background-color: transparent;
+}
+
+/* Estilo para el fondo de la barra de desplazamiento principal del documento */
+body::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+/* Estilo para el deslizador de la barra de desplazamiento principal del documento */
+body::-webkit-scrollbar-thumb {
+  background-color: rgba(14, 12, 65, 0.5);
+  border-radius: 3px;
+}
+
+/* Estilo para el deslizador de la barra de desplazamiento principal del documento cuando se está interactuando con él */
+body::-webkit-scrollbar-thumb:hover {
+  background-color: #999;
+}
