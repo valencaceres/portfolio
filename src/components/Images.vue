@@ -87,4 +87,31 @@ name: 'Images',
   transition: opacity 0.3s ease-in-out;
   font-size: 2rem;
 }
+@media (min-width: 320px) and (max-width: 425px) {
+  .imgcontainer{
+    flex-direction: column;
+    width: 100%;
+    height: 70vh;
+    justify-content: center;
+  }
+  .img{
+    height: 20vh;
+    margin: 2vh 0;
+  }
+  .img-title{
+    font-size: 15px;
+    left: 43%;
+    top: 13%;
+  }
+  .img-title2{
+    font-size: 15px;
+    left: 42%;
+    top: 48%;
+  }
+  .img-title3{
+    font-size: 15px;
+    left: 39%;
+    top: 84%;
+  }
+}
 </style>

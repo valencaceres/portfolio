@@ -1,9 +1,9 @@
 <template>
   <div class="container1">
-    <div >
-        <a class="linkedin" href="https://www.linkedin.com/in/valentin-caceres/"><Icon class="icon" icon="akar-icons:linkedin-fill" color="white" /></a>
-        <a class="github" href="https://github.com/valencaceres"><Icon class="icon" icon="mdi:github" color="white" /></a>
-        <a class="gmail" href="mailto:dev.vcaceres@gmail.com"><Icon class="icon" icon="logos:google-gmail" color="white" /></a>
+    <div class="contacts" >
+        <a class="linkedin" href="https://www.linkedin.com/in/valentin-caceres/"><Icon class="icon1" icon="akar-icons:linkedin-fill" color="white" /></a>
+        <a class="github" href="https://github.com/valencaceres"><Icon class="icon1" icon="mdi:github" color="white" /></a>
+        <a class="gmail" href="mailto:dev.vcaceres@gmail.com"><Icon class="icon1" icon="logos:google-gmail" color="white" /></a>
     </div>
   </div>
 </template>
@@ -75,5 +75,31 @@ components:{
 .gmail:hover{
     background-color: #e6e6e6;
     transition: 0.2s ease-in-out;
+}
+.icon1{
+    width: 5vw;
+    height: 8vh;
+    margin-bottom: 2vh;
+}
+@media (min-width: 320px) and (max-width:768px){
+    .container1{
+        width: 80%;
+    }
+    .contacts{
+        width: 80%;
+    }
+    .linkedin{
+        width: 100%;
+    }
+    .github{
+        width: 100%;
+    }
+    .gmail{
+        width: 100%;
+    }
+    .icon1{
+    height: 15vh;
+    width: 10vw;
+    }
 }
 </style>

@@ -2,35 +2,66 @@
   <div class="logo">
     <p>Valentin Caceres</p>
   </div>
-  <div class="navlist">
+  <div class="navlist" :class="{ 'desplegable': !desplegado }">
+    <button v-if="showNavbarButton" class="boton-desplegable" @click="desplegarMenu"><Icon class="icon" icon="ei:navicon" color="white" /></button>
     <ul>
-        <a class="nav-link" @click="scrollToSection(sectionId.images)">Proyectos</a>
-        <a class="nav-link" @click="scrollToSection(sectionId.text)">Sobre Mi</a>
-        <a class="nav-link" @click="scrollToSection(sectionId.tech)">Tecnologias</a>
-        <a class="nav-link" @click="scrollToSection(sectionId.contact)">Contacto</a>
+        <a class="nav-link" @click="scrollToSection(sectionId.images)">{{translate('nav1')}}</a>
+        <a class="nav-link" @click="scrollToSection(sectionId.text)">{{translate('nav2')}}</a>
+        <a class="nav-link" @click="scrollToSection(sectionId.tech)">{{translate('nav3')}}</a>
+        <a class="nav-link" @click="scrollToSection(sectionId.contact)">{{translate('nav4')}}</a>
     </ul>
   </div>
 </template>
 
 <script>
 import VueScrollTo from 'vue-scrollto';
+import es from '../es';
+import en from '../en';
+import { Icon } from '@iconify/vue';
 export default {
+mixins: [es, en],
+name: 'Header',
 name: 'Navbar',
+data() {
+    return {
+      desplegado: false,
+      showNavbarButton: false,
+      navlist: 0,
+    }
+  },
+components:{
+  Icon
+},
 props: {
     sectionId: {
       type: Object,
+      required: true
+    },
+    lang: {
+      type: String,
       required: true
     }
   },
   mounted() {
     console.log(this.sectionId.images);
     console.log(this.sectionId.text);
+    console.log(window.innerWidth);
+    if ( window.innerWidth >= 320 && window.innerWidth <= 768) {
+      this.showNavbarButton = true;
+      this.navlist = window.innerHeight + 'px';
+    }
   },
   methods: {
     scrollToSection(sectionName) {
       VueScrollTo.scrollTo(`#${sectionName}`, 500, {
         easing: 'ease-in-out',
       });
+    },
+    translate(prop){
+      return this[this.lang][prop]
+    },
+    desplegarMenu() {
+      this.desplegado = this.desplegado ? false : true;
     },
   },
 }
@@ -110,5 +141,64 @@ props: {
 
 .nav-link:hover::before {
   transform: translateX(-50%) scaleX(1);
+}
+.boton-desplegable{
+  display: none;
+}
+@media (max-width: 768px) {
+  .logo{
+    display: flex;
+    font-size: 20px;
+    width: 100%;
+    height: 15vh;
+    align-items: start;
+    justify-content: center !important;;
+    margin: 0 5vw 0 0;
+  }
+  .logo p{
+    width: 100%;
+    text-align: center;
+    margin-right: 5vw;
+  }
+  ul{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: fixed;
+    background-color: black;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    padding: 10vh 0;
+    z-index: 10;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transform: translateX(100);
+  }
+  .navlist {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 15;
+  }
+  .boton-desplegable{
+    display: inline;
+    padding: 0;
+    background-color: transparent;
+    border: 1px solid transparent;
+    position: fixed;
+    z-index: 20;
+}
+  .desplegable ul {
+    display: none;
+  }
+  .desplegable ul.desplegado {
+    position: absolute;
+    right: 0;
+    transform: translateX(0);
+  }
+  .nav-link{
+    margin: 2vh 0 2vh 2vw;
+    width: 40%;
+  }
 }
 </style>

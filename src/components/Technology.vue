@@ -60,4 +60,13 @@ components: {
   border-radius: 5px;
   transition: all 0.5s ease-in-out;
 }
+@media (min-width: 320px) and (max-width:768px){
+  .container{
+    width: 80%;
+  }
+  .icon{
+    height: 20%;
+    width: 15vw;
+  }
+}
 </style>
