@@ -73,9 +73,9 @@ props: {
   font-family: Montserrat, sans-serif;
   position: absolute;
   top: 3%;
-  left: 5%;
   display: inline-block;
   font-weight: 650;
+  margin-left: 5vw;
 }
 .logo p {
   display: inline-block;
@@ -158,7 +158,6 @@ props: {
   .logo p{
     width: 100%;
     text-align: center;
-    margin-right: 5vw;
   }
   ul{
     display: flex;

@@ -274,7 +274,7 @@ select {
     background-color: rgba(0, 0, 0, 0.774);
     position: absolute;
     top: 1%;
-    right: 5%;
+    right: 3%;
     width: 15vw;
     -webkit-appearance: none;
   -moz-appearance: none;
