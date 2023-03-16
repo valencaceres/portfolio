@@ -38,6 +38,12 @@ props: {
 <style>
 .titleContainer{
   width: 100%;
+  height: 10vh;
+  position: absolute;
+  top: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .image{
   position: relative;
@@ -58,9 +64,7 @@ props: {
 .Title{
     font-size: 3rem;
     text-shadow: 2rem black;
-    position: absolute;
-    top: 50%;
-    left: 40%;
+
 }
 .titleEn{
   font-size: 3rem;
@@ -78,11 +82,19 @@ props: {
   align-items: center;
   font-size: 25px;
   justify-content: center;
-  left: 30%;
 }
 .titleEn{
   font-size: 28px;
   left: 34%;
+}
+.titleContainer{
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  text-align: center;
+  align-items: center;
 }
 }
 </style>
